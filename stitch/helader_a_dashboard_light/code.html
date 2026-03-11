@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c3cf6",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Heladería - Dashboard</title>
+</head>
+<body class="bg-background-light font-display text-slate-900 antialiased overflow-hidden">
+<div class="relative flex h-screen w-full flex-col">
+<!-- Header Section -->
+<header class="flex items-center justify-between border-b border-slate-200 px-12 py-6 bg-white/80 backdrop-blur-md">
+<div class="flex items-center gap-6">
+<div class="p-3 bg-primary/10 rounded-xl text-primary">
+<span class="material-symbols-outlined text-4xl">icecream</span>
+</div>
+<div>
+<h1 class="text-3xl font-black tracking-tight text-slate-900 uppercase">HELADERÍA - DASHBOARD</h1>
+<p class="text-slate-500 font-medium">Gelato Haven - Sucursal Principal</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="flex flex-col items-end">
+<span class="text-4xl font-bold text-slate-900 tracking-tighter">10:30 AM</span>
+<span class="text-slate-500 font-semibold uppercase tracking-widest text-sm">24 OCT, 2023</span>
+</div>
+<div class="flex items-center gap-4 border-l border-slate-200 pl-12">
+<div class="flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded-lg">
+<span class="material-symbols-outlined text-2xl">wifi</span>
+<span class="font-bold text-sm">CONECTADO</span>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-400 text-xs font-bold uppercase">Última Actualización</span>
+<span class="text-slate-600 text-sm font-medium">Ahora mismo</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Dashboard Grid -->
+<main class="flex-1 p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Ice Cream Display -->
+<div class="flex flex-col bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xl shadow-slate-200/50">
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="p-5 bg-primary rounded-2xl text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-5xl">icecream</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-emerald-500 rounded-full text-white font-bold text-sm">
+<span class="w-2 h-2 bg-white rounded-full"></span>
+                            OK
+                        </div>
+</div>
+<div class="mt-8">
+<p class="text-slate-500 text-xl font-bold uppercase tracking-widest mb-2">Exhibidora de Helados</p>
+<h2 class="text-slate-900 text-8xl font-black tracking-tighter">-12.2°C</h2>
+</div>
+</div>
+<div class="h-32 w-full bg-slate-50 border-t border-slate-100 relative overflow-hidden">
+<div class="absolute inset-0 flex items-center px-8">
+<div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4 rounded-full"></div>
+</div>
+</div>
+<div class="absolute bottom-4 right-8 text-xs font-bold text-slate-500 uppercase tracking-widest">Rango Óptimo: -10°C a -15°C</div>
+</div>
+</div>
+<!-- Card 2: Storage Freezer -->
+<div class="flex flex-col bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xl shadow-slate-200/50">
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="p-5 bg-primary rounded-2xl text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-5xl">kitchen</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-emerald-500 rounded-full text-white font-bold text-sm">
+<span class="w-2 h-2 bg-white rounded-full"></span>
+                            OK
+                        </div>
+</div>
+<div class="mt-8">
+<p class="text-slate-500 text-xl font-bold uppercase tracking-widest mb-2">Congelador de Stock</p>
+<h2 class="text-slate-900 text-8xl font-black tracking-tighter">-18.7°C</h2>
+</div>
+</div>
+<div class="h-32 w-full bg-slate-50 border-t border-slate-100 relative overflow-hidden">
+<div class="absolute inset-0 flex items-center px-8">
+<div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-4/5 rounded-full"></div>
+</div>
+</div>
+<div class="absolute bottom-4 right-8 text-xs font-bold text-slate-500 uppercase tracking-widest">Rango Óptimo: -18°C a -22°C</div>
+</div>
+</div>
+<!-- Card 3: Ingredient Refrigerator -->
+<div class="flex flex-col bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xl shadow-slate-200/50">
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="p-5 bg-primary rounded-2xl text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-5xl">ac_unit</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-emerald-500 rounded-full text-white font-bold text-sm">
+<span class="w-2 h-2 bg-white rounded-full"></span>
+                            OK
+                        </div>
+</div>
+<div class="mt-8">
+<p class="text-slate-500 text-xl font-bold uppercase tracking-widest mb-2">Heladera de Ingredientes</p>
+<h2 class="text-slate-900 text-8xl font-black tracking-tighter">4.2°C</h2>
+</div>
+</div>
+<div class="h-32 w-full bg-slate-50 border-t border-slate-100 relative overflow-hidden">
+<div class="absolute inset-0 flex items-center px-8">
+<div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3 rounded-full"></div>
+</div>
+</div>
+<div class="absolute bottom-4 right-8 text-xs font-bold text-slate-500 uppercase tracking-widest">Rango Óptimo: 2°C a 5°C</div>
+</div>
+</div>
+</main>
+<!-- Footer / Status Bar -->
+<footer class="p-6 bg-white border-t border-slate-200 flex justify-between items-center">
+<div class="flex gap-8">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-emerald-500 rounded-full"></span>
+<span class="text-slate-600 font-bold text-xs uppercase tracking-widest">Estado del Sistema: Nominal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-emerald-500 rounded-full"></span>
+<span class="text-slate-600 font-bold text-xs uppercase tracking-widest">Compresores: Activos</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></span>
+<span class="text-slate-600 font-bold text-xs uppercase tracking-widest">Red: En Vivo</span>
+</div>
+</div>
+<div class="text-slate-400 text-xs font-mono uppercase">
+                ID Dispositivo: GH-REFRIG-0924 • v4.2.1-stable
+            </div>
+</footer>
+</div>
+</body></html>

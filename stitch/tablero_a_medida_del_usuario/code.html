@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<title>Configuración a Medida - Dashboard</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex flex-col min-h-screen">
+<!-- Header / TopNavBar -->
+<header class="bg-white dark:bg-slate-900 border-b-2 border-slate-200 dark:border-slate-800 px-8 py-6 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-6">
+<div class="bg-primary text-white p-3 rounded-lg">
+<span class="material-symbols-outlined text-4xl">storefront</span>
+</div>
+<div>
+<h1 class="text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-white">ESTABLECIMIENTO PERSONALIZADO</h1>
+<p class="text-slate-500 dark:text-slate-400 font-bold uppercase text-sm tracking-widest mt-1">Monitoreo Industrial en Tiempo Real</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<div class="text-5xl font-black tabular-nums tracking-tighter text-slate-900 dark:text-white">14:30</div>
+<div class="text-lg font-bold text-slate-500 dark:text-slate-400 uppercase">24 de Mayo, 2024</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex flex-col items-end">
+<span class="material-symbols-outlined text-primary text-4xl">wifi</span>
+<span class="text-xs font-black text-primary uppercase">Conectado</span>
+</div>
+<div class="h-16 w-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center border-2 border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-3xl text-slate-600 dark:text-slate-300">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-8 flex flex-col gap-8">
+<!-- Title and Stats Bar -->
+<div class="flex justify-between items-end border-l-8 border-primary pl-6">
+<div>
+<h2 class="text-6xl font-black text-slate-900 dark:text-white tracking-tighter uppercase">CONFIGURACIÓN A MEDIDA</h2>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-slate-400 text-xl">update</span>
+<p class="text-slate-500 dark:text-slate-400 text-xl font-medium uppercase tracking-wide">Última actualización: hace 1 minuto</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border-2 border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center min-w-[180px]">
+<span class="text-slate-500 dark:text-slate-400 font-black text-xs uppercase mb-1">Alertas</span>
+<span class="text-4xl font-black text-red-600">01</span>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border-2 border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center min-w-[180px]">
+<span class="text-slate-500 dark:text-slate-400 font-black text-xs uppercase mb-1">Estado Red</span>
+<span class="text-4xl font-black text-emerald-500 uppercase">OK</span>
+</div>
+</div>
+</div>
+<!-- Grid of Status Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 flex-1">
+<!-- Unit 1: Normal -->
+<div class="bg-white dark:bg-slate-900 border-b-[12px] border-emerald-500 rounded-xl shadow-lg p-8 flex flex-col justify-between transition-all">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-700 text-7xl">kitchen</span>
+<div class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 px-4 py-2 rounded font-black text-sm uppercase tracking-widest">Estado OK</div>
+</div>
+<div>
+<h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight leading-none">UNIDAD PERSONALIZADA 1</h3>
+<div class="text-7xl font-black text-slate-900 dark:text-white tabular-nums tracking-tighter">2.0°C</div>
+<p class="text-slate-500 dark:text-slate-400 font-bold mt-4 uppercase text-sm">Funcionamiento Normal</p>
+</div>
+</div>
+<!-- Unit 2: Normal -->
+<div class="bg-white dark:bg-slate-900 border-b-[12px] border-emerald-500 rounded-xl shadow-lg p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-700 text-7xl">ac_unit</span>
+<div class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 px-4 py-2 rounded font-black text-sm uppercase tracking-widest">Estado OK</div>
+</div>
+<div>
+<h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight leading-none">UNIDAD PERSONALIZADA 2</h3>
+<div class="text-7xl font-black text-slate-900 dark:text-white tabular-nums tracking-tighter">-15.0°C</div>
+<p class="text-slate-500 dark:text-slate-400 font-bold mt-4 uppercase text-sm">Funcionamiento Normal</p>
+</div>
+</div>
+<!-- Unit 3: Alarm (Red Card) -->
+<div class="bg-red-600 border-b-[12px] border-red-800 rounded-xl shadow-2xl p-8 flex flex-col justify-between relative overflow-hidden">
+<!-- Background Pattern for Alarm -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="h-full w-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+</div>
+<div class="flex justify-between items-start relative z-10">
+<span class="material-symbols-outlined text-white/40 text-7xl">warning</span>
+<div class="bg-white text-red-600 px-4 py-2 rounded font-black text-sm uppercase tracking-widest animate-pulse">Alerta Crítica</div>
+</div>
+<div class="relative z-10">
+<h3 class="text-2xl font-black text-white mb-2 uppercase tracking-tight leading-none">UNIDAD PERSONALIZADA 3</h3>
+<div class="text-7xl font-black text-white tabular-nums tracking-tighter">8.5°C</div>
+<div class="mt-4">
+<p class="text-white font-black uppercase text-xl">ALARMA DE TEMPERATURA</p>
+<p class="text-red-100 font-bold uppercase text-sm">UMBRAL EXCEDIDO</p>
+</div>
+</div>
+</div>
+<!-- Unit 4: Warning (Yellow) -->
+<div class="bg-white dark:bg-slate-900 border-[6px] border-amber-400 border-b-[12px] rounded-xl shadow-lg p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-amber-500 text-7xl">error</span>
+<div class="bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 px-4 py-2 rounded font-black text-sm uppercase tracking-widest">Advertencia</div>
+</div>
+<div>
+<h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight leading-none">UNIDAD PERSONALIZADA 4</h3>
+<div class="text-7xl font-black text-slate-900 dark:text-white tabular-nums tracking-tighter">4.5°C</div>
+<p class="text-amber-600 dark:text-amber-400 font-black mt-4 uppercase text-lg italic tracking-wide">REVISIÓN SUGERIDA</p>
+</div>
+</div>
+</div>
+<!-- Footer / Industrial Stats -->
+<div class="grid grid-cols-4 gap-4 p-4 bg-slate-200 dark:bg-slate-800 rounded-xl">
+<div class="flex flex-col border-r border-slate-300 dark:border-slate-700 px-4">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-black uppercase">Temp. Media Red</span>
+<span class="text-2xl font-black text-slate-800 dark:text-slate-100">0.0°C</span>
+</div>
+<div class="flex flex-col border-r border-slate-300 dark:border-slate-700 px-4">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-black uppercase">Dispositivos</span>
+<span class="text-2xl font-black text-slate-800 dark:text-slate-100">4 / 4 Online</span>
+</div>
+<div class="flex flex-col border-r border-slate-300 dark:border-slate-700 px-4">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-black uppercase">Eficiencia Sistema</span>
+<span class="text-2xl font-black text-slate-800 dark:text-slate-100">99.9%</span>
+</div>
+<div class="flex flex-col px-4">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-black uppercase">Consumo Estimado</span>
+<span class="text-2xl font-black text-slate-800 dark:text-slate-100">2.4 kW/h</span>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Almacén - Dashboard de Refrigeración</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c3cf6",
+                        "background-light": "#f8fafc",
+                        "status-ok": "#10b981",
+                        "status-alarm": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .alarm-glow {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 min-h-screen flex flex-col font-display">
+<!-- Header Section -->
+<header class="w-full border-b border-slate-200 bg-white px-8 py-6 shadow-sm">
+<div class="max-w-[1600px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="bg-primary p-3 rounded-lg">
+<span class="material-symbols-outlined text-white text-3xl">kitchen</span>
+</div>
+<div>
+<h1 class="text-3xl font-black tracking-tight uppercase text-slate-900">Almacén - Dashboard</h1>
+<p class="text-slate-500 font-medium uppercase tracking-wider text-sm">Abarrotes • Sistema en línea</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="flex flex-col items-end">
+<span class="text-2xl font-bold text-slate-900">14:30</span>
+<span class="text-sm text-slate-500 font-medium">24 Oct, 2023</span>
+</div>
+<div class="flex items-center gap-4 border-l border-slate-200 pl-8">
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-sm uppercase">ÚLTIMA ACTUALIZACIÓN</span>
+<span class="text-slate-600">Justo ahora</span>
+</div>
+<span class="material-symbols-outlined text-status-ok text-3xl">wifi</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Grid -->
+<main class="flex-1 p-8 max-w-[1600px] mx-auto w-full">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 h-full">
+<!-- Beverage Fridge Card -->
+<div class="flex flex-col bg-white rounded-xl border-l-[12px] border-status-ok p-8 justify-between shadow-md border border-slate-100">
+<div class="flex justify-between items-start">
+<div>
+<span class="material-symbols-outlined text-5xl text-slate-300">liquor</span>
+<h2 class="text-3xl font-bold mt-4 uppercase text-slate-800">Heladera de Bebidas</h2>
+<p class="text-slate-500 font-bold uppercase tracking-widest mt-1">Estado: OK</p>
+</div>
+<div class="bg-status-ok/10 text-status-ok px-4 py-2 rounded-full flex items-center gap-2 border border-status-ok/20">
+<div class="w-2.5 h-2.5 rounded-full bg-status-ok"></div>
+<span class="font-bold text-sm uppercase">Normal</span>
+</div>
+</div>
+<div class="mt-12">
+<div class="text-[120px] font-black leading-none tracking-tighter text-slate-900">
+                        3.8<span class="text-5xl align-top mt-4 inline-block text-slate-400">°C</span>
+</div>
+<div class="w-full bg-slate-100 h-4 rounded-full mt-8 overflow-hidden">
+<div class="bg-status-ok h-full w-[45%]"></div>
+</div>
+</div>
+</div>
+<!-- Small Freezer Card -->
+<div class="flex flex-col bg-white rounded-xl border-l-[12px] border-status-ok p-8 justify-between shadow-md border border-slate-100">
+<div class="flex justify-between items-start">
+<div>
+<span class="material-symbols-outlined text-5xl text-slate-300">ac_unit</span>
+<h2 class="text-3xl font-bold mt-4 uppercase text-slate-800">Congelador Pequeño</h2>
+<p class="text-slate-500 font-bold uppercase tracking-widest mt-1">Estado: OK</p>
+</div>
+<div class="bg-status-ok/10 text-status-ok px-4 py-2 rounded-full flex items-center gap-2 border border-status-ok/20">
+<div class="w-2.5 h-2.5 rounded-full bg-status-ok"></div>
+<span class="font-bold text-sm uppercase">Normal</span>
+</div>
+</div>
+<div class="mt-12">
+<div class="text-[120px] font-black leading-none tracking-tighter text-slate-900">
+                        -17.2<span class="text-5xl align-top mt-4 inline-block text-slate-400">°C</span>
+</div>
+<div class="w-full bg-slate-100 h-4 rounded-full mt-8 overflow-hidden">
+<div class="bg-status-ok h-full w-[82%]"></div>
+</div>
+</div>
+</div>
+<!-- Dairy Fridge Card (ALARM STATE) -->
+<div class="flex flex-col bg-red-50 rounded-xl border-l-[12px] border-status-alarm p-8 justify-between shadow-xl alarm-glow ring-1 ring-status-alarm/20">
+<div class="flex justify-between items-start">
+<div>
+<span class="material-symbols-outlined text-5xl text-status-alarm">egg_alt</span>
+<h2 class="text-3xl font-bold mt-4 uppercase text-slate-900">Heladera de Lácteos</h2>
+<p class="text-status-alarm font-black uppercase tracking-widest mt-1">ALARMA DE TEMPERATURA</p>
+</div>
+<div class="bg-status-alarm text-white px-4 py-2 rounded-full flex items-center gap-2 animate-pulse">
+<span class="material-symbols-outlined text-lg">warning</span>
+<span class="font-bold text-sm uppercase">Crítico</span>
+</div>
+</div>
+<div class="mt-12">
+<div class="text-[120px] font-black leading-none tracking-tighter text-status-alarm">
+                        9.2<span class="text-5xl align-top mt-4 inline-block opacity-60">°C</span>
+</div>
+<div class="w-full bg-slate-200 h-4 rounded-full mt-8 overflow-hidden">
+<div class="bg-status-alarm h-full w-full"></div>
+</div>
+<div class="mt-6 p-4 bg-white/60 rounded-lg flex items-center gap-3 border border-status-alarm/20">
+<span class="material-symbols-outlined text-status-alarm">error</span>
+<p class="text-status-alarm font-bold text-lg uppercase tracking-tight">Umbral Excedido &gt; 5.0°C</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Stats -->
+<footer class="p-8 border-t border-slate-200 bg-white">
+<div class="max-w-[1600px] mx-auto flex items-center justify-between">
+<div class="flex gap-12">
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase text-slate-400 tracking-widest">Temp. Ambiente</span>
+<span class="text-xl font-bold text-slate-700">22.4°C</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase text-slate-400 tracking-widest">Sensores Activos</span>
+<span class="text-xl font-bold text-slate-700">12 / 12</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase text-slate-400 tracking-widest">Latencia de Red</span>
+<span class="text-xl font-bold text-slate-700">14ms</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold uppercase text-slate-400 tracking-widest">ID Terminal de Monitoreo</p>
+<p class="text-sm font-mono uppercase text-slate-600">ALM-NODE-04-A</p>
+</div>
+</div>
+</footer>
+</body></html>

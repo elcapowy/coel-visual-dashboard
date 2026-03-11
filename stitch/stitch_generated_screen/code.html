@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tuya Cloud Link - COEL Refrigeration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-6 md:px-20 py-4 bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-3 text-slate-900 dark:text-slate-100">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">ac_unit</span>
+</div>
+<div class="flex flex-col">
+<h2 class="text-lg font-bold leading-tight tracking-tight uppercase">COEL</h2>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Monitoring Systems</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+</span>
+<span class="text-xs font-bold uppercase tracking-wider">Disconnected</span>
+</div>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-slate-200 dark:bg-background-light/10 text-slate-700 dark:text-slate-100 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8 px-4 md:px-10">
+<div class="layout-content-container flex flex-col max-w-[800px] flex-1">
+<!-- Hero Section with Industrial Background -->
+<div class="mb-8 overflow-hidden rounded-2xl border border-primary/10 shadow-xl bg-background-dark relative min-h-[240px] flex flex-col justify-end p-8">
+<div class="absolute inset-0 opacity-40 mix-blend-overlay bg-gradient-to-t from-background-dark to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of industrial cooling pipes and metal surfaces" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt2sDLv1xxJoiB5NJ-z8PvFzGLmU9fz4SJo0A8bs12PfNNgTwMdYRZGO_aV5_I943pidRsvbhWoneEOMwUP8vA8QNWa3r8ogfSlPM3L8QSBYxv4FHP1pGkFh_xyQI3qV0efGrpO9ULd2LeWjOaQDttkNDCbn2pNiaSFJRVoau3Kjj30OUvB5toqepLdqm6SIw3vpnAQPjBP6JAf_6YhelLYt7AO3sVlhAOgpCodQOQ1IP2ekcHKILCML8nyk2inDCtlWJ0jvSKcQ')"></div>
+<div class="relative z-20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">cloud_sync</span>
+<span class="text-primary font-bold tracking-widest text-xs uppercase">Cloud Link Protocol</span>
+</div>
+<h1 class="text-white text-4xl font-extrabold tracking-tight mb-2">Tuya API Connection</h1>
+<p class="text-slate-300 text-base max-w-md">Integrate your industrial refrigeration units with the Tuya IoT cloud for real-time telemetry and alerts.</p>
+</div>
+</div>
+<!-- Connection Form Card -->
+<div class="bg-white dark:bg-background-dark/50 border border-slate-200 dark:border-primary/10 rounded-2xl p-6 md:p-10 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Left: Form Fields -->
+<div class="space-y-6">
+<div>
+<label class="block text-slate-700 dark:text-slate-200 text-sm font-semibold mb-2 uppercase tracking-wide">Access ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">key</span>
+<input class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none" placeholder="Ex: xt7...34j" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-slate-700 dark:text-slate-200 text-sm font-semibold mb-2 uppercase tracking-wide">Access Secret</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">lock</span>
+<input class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none" placeholder="••••••••••••••••" type="password"/>
+</div>
+</div>
+<div>
+<label class="block text-slate-700 dark:text-slate-200 text-sm font-semibold mb-2 uppercase tracking-wide">Device ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">router</span>
+<input class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 dark:border-primary/20 bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none" placeholder="Ex: dev_982...xyz" type="text"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all transform active:scale-[0.98] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">bolt</span>
+                                    Establish Connection
+                                </button>
+</div>
+<!-- Right: Instructions/Status -->
+<div class="flex flex-col justify-between bg-slate-50 dark:bg-primary/5 rounded-2xl p-6 border border-slate-100 dark:border-primary/5">
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                                        Connection Details
+                                    </h3>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-1">check_circle</span>
+<p class="text-xs text-slate-600 dark:text-slate-400">Ensure your Tuya project is set up in the <span class="text-primary">Cloud Development</span> section.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-1">check_circle</span>
+<p class="text-xs text-slate-600 dark:text-slate-400">Whitelist the monitoring server IP in your Access Control settings.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-slate-400 text-sm mt-1">check_circle</span>
+<p class="text-xs text-slate-600 dark:text-slate-400">Data is synced via MQTT every 60 seconds by default.</p>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-200 dark:border-primary/10">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase text-slate-500">Current Status</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 uppercase">Idle</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-background-dark border border-slate-200 dark:border-primary/10">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">link_off</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Gateway Offline</p>
+<p class="text-[11px] text-slate-500">Waiting for credentials...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<footer class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 px-2">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-1.5 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">AES-256 Encrypted</span>
+</div>
+<div class="flex items-center gap-1.5 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+<span class="material-symbols-outlined text-sm">cloud</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Tuya Certified</span>
+</div>
+</div>
+<p class="text-[10px] font-medium text-slate-500">© 2024 COEL Industrial Automation. All rights reserved.</p>
+</footer>
+</div>
+</main>
+</div>
+</div>
+</body></html>

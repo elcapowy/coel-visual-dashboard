@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel Multitienda - Refrigeración</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f0f2f5",
+                        "background-dark": "#0b101a",
+                        "status-green": "#00a854",
+                        "status-amber": "#d48806",
+                        "status-red": "#cf1322",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .status-glow-green { box-shadow: 0 0 10px rgba(0, 168, 84, 0.15); }
+        .status-glow-amber { box-shadow: 0 0 10px rgba(212, 136, 6, 0.15); }
+        .status-glow-red { box-shadow: 0 0 10px rgba(207, 19, 34, 0.15); }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 min-h-screen font-display">
+<div class="flex h-full min-h-screen flex-col">
+<!-- Global Header -->
+<header class="flex items-center justify-between border-b border-slate-300 bg-white px-8 py-6 sticky top-0 z-50 shadow-sm">
+<div class="flex items-center gap-5">
+<div class="bg-primary p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">ac_unit</span>
+</div>
+<div>
+<h2 class="text-slate-900 text-2xl font-black leading-tight tracking-tight uppercase">Panel Multitienda</h2>
+<p class="text-sm text-slate-600 font-bold uppercase tracking-wider">Control de Refrigeración Industrial</p>
+</div>
+</div>
+<div class="flex flex-1 justify-end items-center gap-10">
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-primary text-base font-bold border-b-4 border-primary pb-1" href="#">DASHBOARD</a>
+<a class="text-slate-600 text-base font-bold hover:text-primary transition-colors" href="#">SUCURSALES</a>
+<a class="text-slate-600 text-base font-bold hover:text-primary transition-colors" href="#">ALARMAS</a>
+<a class="text-slate-600 text-base font-bold hover:text-primary transition-colors" href="#">REPORTES</a>
+</nav>
+<div class="flex items-center gap-4 border-l-2 border-slate-200 pl-10">
+<div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-100 text-status-green border border-green-200">
+<span class="material-symbols-outlined text-xl">cloud_done</span>
+<span class="text-sm font-black uppercase tracking-widest">Conectado</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xl font-black text-slate-900">14:35:02</span>
+<span class="text-xs text-slate-500 uppercase tracking-[0.2em] font-bold">24 Oct 2023</span>
+</div>
+<div class="size-11 rounded-full bg-slate-200 border-2 border-primary/20 flex items-center justify-center overflow-hidden ml-2">
+<img alt="Usuario" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxGtVYNOZJ2q5kHbFh3AQSGIVzhAAYZ2QMNW-VJWshNxV_8gzWv1wNEr7GHBuLkwMW-9rM-OMrsNk1aK5TcX75DftsTU_foXNdDeZiu11o7VFcEBlmZjEl7oEcqeGJ9jKl16wRnrcv5oywCqpkDhtvGoqzHD5D8hQilW_TcwFwf7MN6t65EpHHv_yShM2VAFlwpGxOp13kTeHJPSG7xcSH_bRGCVohqiHxUYg3HOsdPC7yp0zc6dPVw6KmDnYisqjJ-HmO7glydEk"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 p-8 max-w-[1600px] mx-auto w-full">
+<!-- Key Metrics Overview -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<div class="bg-white p-6 rounded-xl border border-slate-300 shadow-sm">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-3xl">storefront</span>
+</div>
+<span class="text-sm font-black text-slate-500 uppercase tracking-widest">Sucursales</span>
+</div>
+<p class="text-5xl font-black text-slate-900 mb-2">24</p>
+<p class="text-base text-slate-600 font-semibold">4 Regiones activas</p>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-300 shadow-sm border-t-4 border-t-status-green">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-green-100 rounded-lg text-status-green">
+<span class="material-symbols-outlined text-3xl">check_circle</span>
+</div>
+<span class="text-sm font-black text-slate-500 uppercase tracking-widest">Operativo</span>
+</div>
+<p class="text-5xl font-black text-slate-900 mb-2">18</p>
+<div class="flex items-center gap-1 text-status-green">
+<span class="material-symbols-outlined text-xl">trending_up</span>
+<span class="text-lg font-bold">75% del total</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-300 shadow-sm border-t-4 border-t-status-amber">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-amber-100 rounded-lg text-status-amber">
+<span class="material-symbols-outlined text-3xl">warning</span>
+</div>
+<span class="text-sm font-black text-slate-500 uppercase tracking-widest">Alertas</span>
+</div>
+<p class="text-5xl font-black text-slate-900 mb-2">4</p>
+<div class="flex items-center gap-1 text-status-amber">
+<span class="material-symbols-outlined text-xl">notification_important</span>
+<span class="text-lg font-bold">Requiere atención</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-300 shadow-sm border-t-4 border-t-status-red">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-red-100 rounded-lg text-status-red">
+<span class="material-symbols-outlined text-3xl">error</span>
+</div>
+<span class="text-sm font-black text-slate-500 uppercase tracking-widest">Críticos</span>
+</div>
+<p class="text-5xl font-black text-slate-900 mb-2">2</p>
+<div class="flex items-center gap-1 text-status-red">
+<span class="material-symbols-outlined text-xl">emergency</span>
+<span class="text-lg font-bold">Acción inmediata</span>
+</div>
+</div>
+</div>
+<!-- Stores Detailed Monitoring -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between px-2 mb-2">
+<h3 class="text-3xl font-black text-slate-900 tracking-tight">Estado de Sucursales</h3>
+<div class="flex gap-4">
+<button class="px-6 py-3 text-base font-bold bg-white border-2 border-slate-300 rounded-lg hover:bg-slate-50 transition-colors uppercase tracking-widest">
+                            Filtrar
+                        </button>
+<button class="px-6 py-3 text-base font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-all shadow-md uppercase tracking-widest">
+                            Descargar Reporte
+                        </button>
+</div>
+</div>
+<!-- Store Row: Sucursal Centro -->
+<div class="bg-white p-6 rounded-xl border-l-[12px] border-l-status-green border border-slate-300 shadow-sm flex flex-wrap items-center justify-between gap-8 transition-all hover:shadow-md group">
+<div class="flex items-center gap-6 min-w-[320px]">
+<div class="size-16 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 border border-slate-200">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<div>
+<h4 class="font-black text-2xl text-slate-900">Sucursal Centro</h4>
+<p class="text-base text-slate-500 font-medium">Calle Principal #123, Distrito Central</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Estado</span>
+<div class="flex items-center gap-3 text-status-green">
+<span class="size-4 rounded-full bg-status-green status-glow-green"></span>
+<span class="font-black text-xl tracking-tight">OPERATIVO</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Temp. Promedio</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">thermometer</span>
+<span class="text-3xl font-black text-slate-900">2.4°C</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-64">
+<div class="flex justify-between text-xs font-black text-slate-400 uppercase tracking-[0.2em]">
+<span>Alarmas Activas</span>
+<span class="text-slate-900 font-black">10 / 100</span>
+</div>
+<div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+<div class="bg-status-green h-full rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 px-6 py-3 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg transition-all text-sm font-black uppercase tracking-widest border-2 border-primary/20">
+<span>Ver Detalle</span>
+<span class="material-symbols-outlined text-lg">open_in_new</span>
+</button>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors text-3xl">chevron_right</span>
+</div>
+</div>
+<!-- Store Row: Sucursal Norte -->
+<div class="bg-white p-6 rounded-xl border-l-[12px] border-l-status-amber border border-slate-300 shadow-sm flex flex-wrap items-center justify-between gap-8 transition-all hover:shadow-md group">
+<div class="flex items-center gap-6 min-w-[320px]">
+<div class="size-16 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 border border-slate-200">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<div>
+<h4 class="font-black text-2xl text-slate-900">Sucursal Norte</h4>
+<p class="text-base text-slate-500 font-medium">Avenida Industrial 45, Sector Norte</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Estado</span>
+<div class="flex items-center gap-3 text-status-amber">
+<span class="size-4 rounded-full bg-status-amber status-glow-amber"></span>
+<span class="font-black text-xl tracking-tight">ALERTA</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Temp. Promedio</span>
+<div class="flex items-center gap-3 text-status-amber">
+<span class="material-symbols-outlined text-3xl">thermometer_gain</span>
+<span class="text-3xl font-black">4.8°C</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-64">
+<div class="flex justify-between text-xs font-black text-slate-400 uppercase tracking-[0.2em]">
+<span>Alarmas Activas</span>
+<span class="text-slate-900 font-black">45 / 100</span>
+</div>
+<div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+<div class="bg-status-amber h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 px-6 py-3 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg transition-all text-sm font-black uppercase tracking-widest border-2 border-primary/20">
+<span>Ver Detalle</span>
+<span class="material-symbols-outlined text-lg">open_in_new</span>
+</button>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-status-amber transition-colors text-3xl">chevron_right</span>
+</div>
+</div>
+<!-- Store Row: Sucursal Sur -->
+<div class="bg-white p-6 rounded-xl border-l-[12px] border-l-status-red border border-slate-300 shadow-sm flex flex-wrap items-center justify-between gap-8 transition-all hover:shadow-md group">
+<div class="flex items-center gap-6 min-w-[320px]">
+<div class="size-16 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 border border-slate-200">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<div>
+<h4 class="font-black text-2xl text-slate-900">Sucursal Sur</h4>
+<p class="text-base text-slate-500 font-medium">Ruta 10 km 4.5, Zona Logística Sur</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Estado</span>
+<div class="flex items-center gap-3 text-status-red">
+<span class="size-4 rounded-full bg-status-red status-glow-red"></span>
+<span class="font-black text-xl tracking-tight">CRÍTICO</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Temp. Promedio</span>
+<div class="flex items-center gap-3 text-status-red">
+<span class="material-symbols-outlined text-3xl">thermometer_loss</span>
+<span class="text-3xl font-black">-1.2°C</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-64">
+<div class="flex justify-between text-xs font-black text-slate-400 uppercase tracking-[0.2em]">
+<span>Alarmas Activas</span>
+<span class="text-slate-900 font-black">90 / 100</span>
+</div>
+<div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+<div class="bg-status-red h-full rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 px-6 py-3 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg transition-all text-sm font-black uppercase tracking-widest border-2 border-primary/20">
+<span>Ver Detalle</span>
+<span class="material-symbols-outlined text-lg">open_in_new</span>
+</button>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-status-red transition-colors text-3xl">chevron_right</span>
+</div>
+</div>
+<!-- Store Row: Sucursal Este -->
+<div class="bg-white p-6 rounded-xl border-l-[12px] border-l-status-green border border-slate-300 shadow-sm flex flex-wrap items-center justify-between gap-8 transition-all hover:shadow-md group">
+<div class="flex items-center gap-6 min-w-[320px]">
+<div class="size-16 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 border border-slate-200">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<div>
+<h4 class="font-black text-2xl text-slate-900">Sucursal Este</h4>
+<p class="text-base text-slate-500 font-medium">Boulevard del Sol #89, Ciudad del Este</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Estado</span>
+<div class="flex items-center gap-3 text-status-green">
+<span class="size-4 rounded-full bg-status-green status-glow-green"></span>
+<span class="font-black text-xl tracking-tight">OPERATIVO</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 min-w-[160px]">
+<span class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Temp. Promedio</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">thermometer</span>
+<span class="text-3xl font-black text-slate-900">3.1°C</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-64">
+<div class="flex justify-between text-xs font-black text-slate-400 uppercase tracking-[0.2em]">
+<span>Alarmas Activas</span>
+<span class="text-slate-900 font-black">15 / 100</span>
+</div>
+<div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+<div class="bg-status-green h-full rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 px-6 py-3 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg transition-all text-sm font-black uppercase tracking-widest border-2 border-primary/20">
+<span>Ver Detalle</span>
+<span class="material-symbols-outlined text-lg">open_in_new</span>
+</button>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors text-3xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Footer / System Info -->
+<footer class="mt-16 flex flex-col md:flex-row items-center justify-between py-10 border-t-2 border-slate-300 text-slate-600 text-sm font-bold">
+<div class="flex items-center gap-6 mb-6 md:mb-0">
+<span class="font-black uppercase tracking-widest">Control Frío v2.1.0</span>
+<span class="size-2 rounded-full bg-slate-400"></span>
+<span class="uppercase">Soporte: support@controlfrio.com</span>
+</div>
+<div class="flex items-center gap-10">
+<a class="hover:text-primary uppercase tracking-widest" href="#">Términos de Servicio</a>
+<a class="hover:text-primary uppercase tracking-widest" href="#">Privacidad</a>
+<div class="flex items-center gap-3 ml-6 px-6 py-3 bg-white border-2 border-slate-300 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary">settings_suggest</span>
+<span class="font-black uppercase tracking-[0.15em]">Estado del Sistema: <span class="text-status-green">OK</span></span>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
